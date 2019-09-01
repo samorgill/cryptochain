@@ -1,4 +1,5 @@
 const Block = require('./block');
+const {GENESIS_DATA} = require('./config');
 
 describe('Block', () => {
     const timestamp = 'a date';
@@ -13,5 +14,13 @@ describe('Block', () => {
         expect(block.hash).toEqual(hash);
         expect(block.data).toEqual(data);
 
+    });
+
+    it('Creates the first genesis block', () => {
+        const genesisBlock = Block.genesis();
+
+        expect(genesisBlock instanceof Block).toBe(true);
+
+        expect(genesisBlock).toEqual(GENESIS_DATA);
     })
 });
