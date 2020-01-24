@@ -6,12 +6,14 @@
   "scripts": {
     "test": "jest --watchAll",
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "dev-peer": "cross-ENV GENERATE_PEER_PORT='true' nodemon index.js"
   },
   "keywords": [],
   "author": "Sam Orgill",
   "license": "ISC",
   "devDependencies": {
+    "cross-env": "^6.0.3",
     "jest": "^23.6.0"
   },
   "dependencies": {
