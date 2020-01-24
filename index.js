@@ -1,8 +1,11 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const Blockchain = require('./blockchain');
 
 const app = express();
 const blockchain = new Blockchain();
+
+app.use(bodyParser.json());
 
 const api = 'api';
 app.get(`/${api}/blocks`, (req, res) => {
@@ -10,7 +13,6 @@ app.get(`/${api}/blocks`, (req, res) => {
 });
 
 app.post(`/${api}/mine`, (req, res) => {
-    console.log(req.body);
     const {data} = req.body;
     blockchain.addBlock({data});
     res.redirect(`/${api}/blocks`);
