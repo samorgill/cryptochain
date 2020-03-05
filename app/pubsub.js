@@ -36,11 +36,7 @@ class PubSub {
     }
 
     publish({channel, message}) {
-        this.pubnub.unsubscribe((channel, () => {
-            this.pubnub.publish({channel, message}, () => {
-                this.pubnub.subscribe({channels: Object.values(CHANNELS)});
-            });
-        }));
+        this.pubnub.publish({channel, message});
     }
 
     broadcastChain() {
