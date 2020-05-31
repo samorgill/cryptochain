@@ -1,8 +1,7 @@
-const {GENESIS_DATA} = require('../config');
 const Block = require('./block');
 const cryptoHash = require('../util/crypto-hash');
 
-class Index {
+class Blockchain {
     constructor() {
         this.chain = [Block.genesis()];
     }
@@ -23,7 +22,7 @@ class Index {
             return;
         }
 
-        if (!Index.isValidChain(chain)) {
+        if (!Blockchain.isValidChain(chain)) {
             console.error('The incoming chain must be valid');
             return;
         }
@@ -57,4 +56,4 @@ class Index {
 
 }
 
-module.exports = Index;
+module.exports = Blockchain;
