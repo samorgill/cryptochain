@@ -24,7 +24,7 @@
     "elliptic": "^6.5.2",
     "hex-to-binary": "^1.0.1",
     "nodemon": "^2.0.2",
-    "pubnub": "^4.27.3",
+    "pubnub": "^4.37.0",
     "request": "^2.88.0",
     "uuid": "^7.0.2"
   }
